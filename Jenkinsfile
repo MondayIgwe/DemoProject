@@ -35,6 +35,7 @@ pipeline {
                 echo "Building the project (Version defined in Jenkinsfile: ${env.NEW_VERSION})..."
                 // Use 'mvnw' if your project includes the Maven wrapper (recommended)
                 // sh './mvnw clean compile'
+                // bat './mvnw clean compile' for windows
                 // Otherwise, use the 'mvn' command configured via the 'tools' directive
                 bat 'mvn clean compile'
             }
@@ -45,9 +46,10 @@ pipeline {
             steps {
                 echo 'Running tests...'
                 // Use 'mvnw' if you have the wrapper
-                // sh './mvnw test'
+                // sh './mvnw test' for linux
+                // bat './mvnw test' for windows
                 // Use 'mvn' configured via 'tools'
-                sh 'mvn test'
+                bat 'mvn test'
             }
         }
 
@@ -58,7 +60,7 @@ pipeline {
                 // Use 'mvnw' if you have the wrapper
                 // sh './mvnw package'
                 // Use 'mvn' configured via 'tools'
-                sh 'mvn package'
+                bat 'mvn package'
 
                 // Optional: Archive the build artifact (e.g., the JAR/WAR file)
                 // Adjust the path 'target/*.jar' as needed for your project's output
