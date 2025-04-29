@@ -52,34 +52,6 @@ pipeline {
                 bat 'mvn test'
             }
         }
-
-        // Stage 4: Package (Optional but common) - Create the JAR/WAR file
-        stage('Package') {
-            steps {
-                echo 'Packaging the application...'
-                // Use 'mvnw' if you have the wrapper
-                // sh './mvnw package'
-                // Use 'mvn' configured via 'tools'
-                bat 'mvn package'
-
-                // Optional: Archive the build artifact (e.g., the JAR/WAR file)
-                // Adjust the path 'target/*.jar' as needed for your project's output
-                // archiveArtifacts artifacts: 'target/*.jar', fingerprint: true
-            }
-        }
-
-        // Add more stages as needed (e.g., 'Deploy', 'Code Analysis', 'Security Scan')
-        /*
-        stage('Deploy') {
-            when {
-                branch 'main' // Only deploy from the main branch, for example
-            }
-            steps {
-                echo 'Deploying...'
-                // Add deployment steps here
-            }
-        }
-        */
     }
 
     // 5. Post Actions: Actions to run after all stages complete
