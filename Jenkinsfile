@@ -6,8 +6,8 @@ pipeline {
     //    --> IMPORTANT: Replace 'JDK 11' and 'Maven 3.9.x' with the EXACT names
     //        you configured in Manage Jenkins -> Global Tool Configuration.
     tools {
-        jdk 'JDK 11'     // Use the name of your configured JDK
-        maven 'Maven 3.9.x' // Use the name of your configured Maven installation
+        jdk 'JAVA_HOME'     // Use the name of your configured JDK
+        maven 'Maven 3.9.9' // Use the name of your configured Maven installation
     }
 
     // 3. Environment Variables (Optional)
