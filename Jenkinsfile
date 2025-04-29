@@ -36,7 +36,7 @@ pipeline {
                 // Use 'mvnw' if your project includes the Maven wrapper (recommended)
                 // sh './mvnw clean compile'
                 // Otherwise, use the 'mvn' command configured via the 'tools' directive
-                sh './mvnw clean compile'
+                bat 'mvn clean compile'
             }
         }
 
