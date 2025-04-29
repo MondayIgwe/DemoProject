@@ -6,8 +6,8 @@ pipeline {
     //    --> IMPORTANT: Replace 'JDK 11' and 'Maven 3.9.x' with the EXACT names
     //        you configured in Manage Jenkins -> Global Tool Configuration.
     tools {
-        jdk 'JAVA_HOME'     // Use the name of your configured JDK
-        maven 'MAVEN_HOME' // Use the name of your configured Maven installation
+        jdk 'JAVA_HOME'     // Use the name of your configured JDK Jenkins
+        maven 'MAVEN_HOME' // Use the name of your configured Maven installation in Jenkins
     }
 
     // 3. Environment Variables (Optional)
@@ -36,7 +36,7 @@ pipeline {
                 // Use 'mvnw' if your project includes the Maven wrapper (recommended)
                 // sh './mvnw clean compile'
                 // Otherwise, use the 'mvn' command configured via the 'tools' directive
-                sh 'mvn clean compile'
+                sh './mvnw clean compile'
             }
         }
 
